@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function onchangeFun() {
+            alert("静态改变内容");
+        }
+
+        window.onload = function () {
+            //1.获取标签对象
+            var selObj = document.getElementById('sel01');
+            //2.通过标签对象.事件名 = function(){}
+            selObj.onchange = function () {
+                alert("动态改变内容");
+            }
+        }
+
+    </script>
+</head>
+<body>
+<!-- 静态注册onchange事件 -->
+<select onchange="onchangeFun()">
+    <option>--人物--</option>
+    <option>QQQ</option>
+    <option>WWW</option>
+    <option>EEE</option>
+</select>
+<select id="sel01">
+    <option>--人物--</option>
+    <option>QQQ</option>
+    <option>WWW</option>
+    <option>EEE</option>
+</select>
+</body>
+</html>
